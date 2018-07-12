@@ -17,7 +17,7 @@ from netCDF4 import Dataset
 #coo_fo = '/Bcar_'         # comp outer folder
 #coo1   = '/bcA'
 
-jj = 5 # Isop = 1; alpha, beta = 2,3; lime = 4; bcar = 5
+jj = 4 # Isop = 1; alpha, beta = 2,5; lime = 3; bcar = 4
 
 #............................................................................#
 #................READING DATA FOR SPECIFIC CASES.............................#
@@ -58,7 +58,7 @@ if  (jj == 1): # isoprene
    dir_name = coo_fo+str(conc)
    fold     = dir_name+Basename
 
-elif  (jj == 2 or jj == 3):  # for apinene or bpinene
+elif  (jj == 2 or jj == 5):  # for apinene or bpinene
  
   if (jj == 2): # for apinene
 
@@ -66,7 +66,7 @@ elif  (jj == 2 or jj == 3):  # for apinene or bpinene
    coo    = '/api'           # compound inner folder 
    coo_fo = '/Apin_'         # comp outer folder 
    
-  elif (jj == 3): # for bpinene
+  elif (jj == 5): # for bpinene
   
    print('Case = Bpinene')
    coo    = '/bpi'           # compound inner folder 
@@ -114,7 +114,7 @@ elif  (jj == 2 or jj == 3):  # for apinene or bpinene
  
   
  
-elif  (jj == 4):  # for limonene
+elif  (jj == 3):  # for limonene
   
  print('Case = Limonene')
  coo    = '/lim'           # compound inner folder 
@@ -201,12 +201,38 @@ else:  # for bcarp
  
  
 
-  
-  path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A4/A4'+fold+'/'
+  if(jj == 1):
+   path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A1'+fold+'/'
+   nc = Dataset(path+'particle.nc', 'r')
+   print('......Reading file  for compound Isoprene from path......')
+   print(path)
+   
+  elif(jj == 2 ):
+   path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A2'+fold+'/'
+   nc = Dataset(path+'particle.nc', 'r')
+   print('......Reading file  for compound A-pinene from path......')
+   print(path)
 
-  nc = Dataset(path+'particle.nc', 'r')
+  elif(jj == 3 ):
+   path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A3'+fold+'/'
+   nc = Dataset(path+'particle.nc', 'r')
+   print('......Reading file  for compound Limonene from path......')
+   print(path)
+
+  elif(jj == 4 ):
+   path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A4'+fold+'/'
+   nc = Dataset(path+'particle.nc', 'r')
+   print('......Reading file  for compound B-carph from path......')
+   print(path)
+
+  else:
+   path = '/home/local/carltonx/Work/Malte_box/Project_runs/malte_box/Malte_out/Box/Test1234/A5'+fold+'/'
+   nc = Dataset(path+'particle.nc', 'r')
+   print('....:..Reading file  for compound B-pinene from path......')
+   print(path)
 
 
+   
   num_conc = nc.variables['number_concentration']
 #print num_conc.units
 #print num_conc.shape 
