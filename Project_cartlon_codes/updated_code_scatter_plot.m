@@ -2,7 +2,7 @@ close all
 clc
 
 apin_10s   = load(['/home/local/carltonx/Work/Malte_box/Project_runs/New_results/hom_24hr_runs/apin_10_hom_new.dat']);
-apin_24   = load(['/home/local/carltonx/Work/Malte_box/Project_runs/New_results/hom_24hr_runs/apin_24_hom_new.dat']);
+apin_24    = load(['/home/local/carltonx/Work/Malte_box/Project_runs/New_results/hom_24hr_runs/apin_24_hom_new.dat']);
 
 markers = {'*';'o';'s'};
 sz  = linspace(80,400,5);

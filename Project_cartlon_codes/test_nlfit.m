@@ -1,13 +1,13 @@
 % Create an anonymous function that describes the expected relationship
 % between X and Y
-% fun = @(b,X) b(1)*X(:,1) + b(2)*X(:,2) + b(3) * exp(b(4)*X(:,3));
+ fun = @(b,X) b(1)*X(:,1) + b(2)*X(:,2) + b(3) * exp(b(4)*X(:,3));
 
 ox = 2;
 
 % Create a data set to use for our example
 % Specify beta
 % [2;5;10;50;100];
-% b = [100; 200; 3; 4;]
+ b = [100; 200; 3; 4;]
 % Create some X variables
 % X = rand(100,3);
 X = [0.0027e3 ; 0.0054e3; 0.0270e3; 0.2703e3;0.5405e03; 1.081e3];
